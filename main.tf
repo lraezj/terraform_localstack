@@ -1,4 +1,4 @@
-terraform {
+erraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
