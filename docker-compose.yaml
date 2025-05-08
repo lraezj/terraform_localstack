@@ -1,0 +1,51 @@
+version: '3.8'
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    ports:
+      - "4566:4566"
+      - "4571:4571"
+    environment:
+      - SERVICES=s3,ec2
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - LOCALSTACK_AUTH_TOKEN=ls-taHI2837-XEpA-FAgO-5475-mePusocA736d # Opcional, para funcionalidades avanzadas
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test    
+    volumes:
+      - "./localstack:/var/lib/localstack"
+    restart: always  # Asegura que se reinicie si falla
+    command: [ "sh", "-c", "localstack start & tail -f /dev/null" ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
