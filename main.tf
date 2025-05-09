@@ -26,6 +26,11 @@ resource "aws_s3_bucket" "test_bucket" {
   bucket = "mi-bucket-localstack"
 }
 
+module "mi_bucket" {
+  source      = "./modules/mi-recurso"
+  bucket_name = "bucket-desde-modulo"
+}
+
 resource "aws_instance" "local_instance" {
   ami           = "ami-12345678"
   instance_type = "t2.micro"
