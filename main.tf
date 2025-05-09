@@ -21,10 +21,7 @@ provider "aws" {
     ec2            = "http://localhost:4566"
   }
 }
-module "mi_bucket" {
-  source      = "./modules/mi-recurso"
-  bucket_name = "bucket-desde-modulo"
-}
+
 resource "aws_s3_bucket" "test_bucket" {
   bucket = "mi-bucket-localstack"
 }
